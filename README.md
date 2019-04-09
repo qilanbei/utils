@@ -53,11 +53,22 @@ isValidString (str) {
 数组求和
 
 ```angular2html
+1. 
 arrSum (arr) {
 	return arr.reduce(function (prev, curr) {
 		return parseInt(prev) + parseInt(curr)
 	})
-},
+}
+
+2. 
+arrSum (array) {
+	let sum = 0
+    array.forEach(function(entry) {
+        sum += entry;
+    });
+	return sum
+}
+
 ```
 
 时间格式化
