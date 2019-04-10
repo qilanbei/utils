@@ -69,6 +69,13 @@ arrSum (array) {
 	return sum
 }
 
+3.
+arrSum (array) {
+	return array.reduce(function (accumulator, currentValue) {
+	  return accumulator + currentValue;
+	}, 0);
+}
+
 ```
 
 时间格式化
