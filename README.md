@@ -70,6 +70,44 @@ arrSum (array) {
 }
 ```
 
+数组取交集（交集元素由既属于集合A又属于集合B的元素组成）
+```javascript
+function intersect(arr1, arr2) {
+    if(isArray(arr1) && isArray(arr2)) {
+        return arr1.filter(function(v){  
+          return arr2.indexOf(v)!==-1  
+        })  
+    }
+}
+// 使用方式
+intersect([1,2,3,4], [3,4,5,6]); // [3,4]
+```
+
+数组取并集（并集元素由集合A和集合B中所有元素去重组成）
+```javascript
+function union (arr1, arr2) {
+    if(isArray(arr1) && isArray(arr2)) {
+        return arr1.concat(arr2).unique()
+    }
+}
+// 使用方式
+union([1,2,3,4], [1,3,4,5,6]); // [1,2,3,4,5,6]
+```
+
+数组取差集 (A的差集：属于A集合不属于B集合的元素；B的差集：属于B集合不属于A集合的元素)
+```javascript
+function minus (arr1, arr2) {
+     if(isArray(arr1) && isArray(arr2)) {
+        var interArr = intersect(arr1, arr2);// 交集数组
+        return arr1.filter(function(v){
+            return interArr.indexOf(v) === -1
+        })
+    }
+}
+// 使用方式
+minus([1,2,3,4], [2,4]); // [1,3]
+```
+
 时间格式化
 
 ```angular2html
